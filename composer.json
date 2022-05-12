@@ -1,0 +1,41 @@
+{
+	"name": "mvccore/ext-tool-collections",
+	"type": "library",
+	"description": "MvcCore - Extension - Tool - Collections - Collection classes for typed arrays in PHP.",
+	"keywords": [
+		"mvc",
+		"mvccore",
+		"framework",
+		"extension",
+		"plugin",
+		"plug-in",
+		"ext",
+		"tool",
+		"collection",
+		"array",
+		"typed",
+		"map",
+		"set",
+		"dictionary",
+		"list",
+		"vector"
+	],
+	"license": ["BSD-3-Clause"],
+	"authors": [{
+		"name": "Tom Flidr",
+		"homepage": "https://github.com/tomFlidr"
+	}],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"php": ">=5.4.0",
+		"nette/tester": "<=2.4",
+		"tomflidr/tracy": "<=2.5.12"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
