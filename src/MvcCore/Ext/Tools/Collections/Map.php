@@ -100,6 +100,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Get collection length.
 	 * @return int
 	 */
+	#[\ReturnTypeWillChange]
 	public function count() {
 		return $this->count;
 	}
@@ -108,6 +109,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Rewind current collection position to the beginning.
 	 * @return void
 	 */
+	#[\ReturnTypeWillChange]
 	public function rewind () {
 		$this->position = 0;
 	}
@@ -116,6 +118,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Move current collection position to next item.
 	 * @return void
 	 */
+	#[\ReturnTypeWillChange]
 	public function next() {
 		$this->position += 1;
 	}
@@ -124,6 +127,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Get current collection position key.
 	 * @return string
 	 */
+	#[\ReturnTypeWillChange]
 	public function key () {
 		return $this->keys[$this->position];
 	}
@@ -132,6 +136,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Get if current collection position is valid for next loop step.
 	 * @return bool
 	 */
+	#[\ReturnTypeWillChange]
 	public function valid () {
 		return $this->position < $this->count;
 	}
@@ -151,6 +156,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * @param  string $offset 
 	 * @return bool
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetExists ($offset) {
 		$offsetStr = (string) $offset;
 		return array_key_exists($offsetStr, $this->array);
@@ -161,6 +167,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * @param  string $offset 
 	 * @return void
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetUnset ($offset) {
 		$offsetStr = (string) $offset;
 		if (isset($this->array[$offsetStr])) {
@@ -190,6 +197,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Implementation to encode collection by `json_encode()`.
 	 * @return array
 	 */
+	#[\ReturnTypeWillChange]
 	public function jsonSerialize () {
 		return $this->array;
 	}
@@ -198,6 +206,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * Return current position value.
 	 * @return mixed
 	 */
+	#[\ReturnTypeWillChange]
 	public function current () {
 		$offsetStr = $this->keys[$this->position];
 		return $this->array[$offsetStr];
@@ -209,6 +218,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * @param  mixed  $value 
 	 * @return void
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetSet ($offset, $value) {
 		if ($offset === NULL) {
 			$this->array[] = $value;
@@ -225,6 +235,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * @param  string $offset 
 	 * @return mixed
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetGet ($offset) {
 		$offsetStr = (string) $offset;
 		return array_key_exists($offsetStr, $this->array)
