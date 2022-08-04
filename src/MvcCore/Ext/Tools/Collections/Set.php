@@ -114,7 +114,7 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 	 * @return int
 	 */
 	#[\ReturnTypeWillChange]
-	public function count() {
+	public function count () {
 		return count($this->array);
 	}
 	
