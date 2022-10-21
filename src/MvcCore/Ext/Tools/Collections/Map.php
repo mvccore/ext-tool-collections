@@ -102,7 +102,22 @@ implements		\Iterator, \ArrayAccess, \Countable, \JsonSerializable {
 		$this->array = & $array;
 		$this->keys = array_keys($array);
 	}
-
+	
+	/**
+	 * @return void
+	 */
+	public function __clone () {
+		$clones = [];
+		foreach ($this->array as $key => $value) {
+			if (is_object($value)) {
+				$clones[$key] = clone $value;
+			} else {
+				$clones[$key] = $value;
+			}
+		}
+		$this->array = $clones;
+	}
+	
 	/**
 	 * Get collection length.
 	 * @return int
