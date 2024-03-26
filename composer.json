@@ -1,7 +1,7 @@
 {
 	"name": "mvccore/ext-tool-collections",
 	"type": "library",
-	"description": "MvcCore - Extension - Tool - Collections - Collection classes for typed arrays in PHP.",
+	"description": "MvcCore - Extension - Tool - Collections - extension with collection classes for typed arrays in PHP.",
 	"keywords": [
 		"mvc",
 		"mvccore",
